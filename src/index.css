@@ -19,3 +19,6 @@ h1 {
   font-size: 24px;
   font-weight: bold;
 }
+body{
+  background-image: none;
+}
