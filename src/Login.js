@@ -1,5 +1,5 @@
 import googleicon1 from "./images/google-icon.png"
-import './Login.css';
+import './login.css';
 import workstreamLogo from "./images/workstream-logo.png"
 import arbisoftlogo from "./images/arbisoft-logo.png"
 
@@ -21,7 +21,7 @@ const Login = () => {
         <img src={workstreamLogo} alt="" />
         <h5>Explore the benefits of cloud enterprise resource </h5>
         <p>planning</p>
-        <img id="img1" src={googleicon1} alt="" />
+        <img id="img111" src={googleicon1} alt="" />
         <h4>or be classical</h4>
         <form onSubmit={handleLogin}>
         <input
@@ -39,12 +39,12 @@ const Login = () => {
       />
      <br />
       <a id="a1" href="https://erp.arbisoft.com/login/accounts/password_reset/">Forgot Password</a>
-      <button id="btn" type="submit">Login</button>
+      <button id="btn1" type="submit">Login</button>
       </form>
       <br />
       <h3>by</h3>
-      <a id="img2" href="https://arbisoft.com">
-      <img id="img3" src={arbisoftlogo} alt="Image Description" />
+      <a id="img22" href="https://arbisoft.com">
+      <img id="img333" src={arbisoftlogo} alt="Image Description" />
       </a>
     </div> 
     </div>
@@ -52,4 +52,3 @@ const Login = () => {
 };
 
 export default Login;
-
