@@ -1,5 +1,4 @@
 import React from "react";
-import CustomNavbar from "../navbar";
 
 const Dashboard = () => {
     return ( 

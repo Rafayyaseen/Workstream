@@ -57,5 +57,16 @@ main{
 }
 .link {
   text-decoration: none;
-  /* Add your other styles here */
+}
+
+.sidebar1 {
+  display: flex;
+  flex-direction: column;
+  height: 93vh; 
+}
+
+
+#btnimage2 {
+  position: absolute;
+  bottom: 0;
 }

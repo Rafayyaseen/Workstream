@@ -1,6 +1,5 @@
 import './App.css';
 import Login from './login';
-import CustomNavbar from './navbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './pages/Dashboard';
 import Organogram from './pages/Organogram';
@@ -11,10 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* This is your Login Route that is separate from Sidebar */}
         <Route path="/login" element={<Login />} />
-
-        {/* These Routes are inside Sidebar */}
         <Route 
           path="/*" 
           element={
@@ -27,6 +23,7 @@ function App() {
             </Sidebar>
           } 
         />
+        <Route path="*" element={<div><h1>This page does not exist</h1></div>}/>
       </Routes>
     </BrowserRouter>
   );

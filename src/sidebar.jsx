@@ -3,14 +3,31 @@ import {
     FaHome,
     FaClock,
     FaSitemap,
-    FaBars,
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 import CustomNavbar from './navbar';
+import beforearbisoft from './images/befarbi.png';
+import afterarbisoft from './images/afterarbi.png';
 
 const Sidebar = ({children}) => {
+
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
+    const imageStyle = isOpen ? 
+    { 
+        height: '48px', 
+        width: '120px',
+        background: 'white',
+        margin: '8px',
+        transition: 'all 0.5s',
+    } :
+    { 
+        height: '25px', 
+        width: '29px',
+        background: 'white',
+        margin: '8px',
+        transition: 'all 0.5s',
+    };
     const menuItem=[
         {
             path:"/",
@@ -27,19 +44,14 @@ const Sidebar = ({children}) => {
             name:"Projectlogs",
             icon:<FaSitemap/>
         }
-    
+        
     ]
     return (
         <div>
-            <CustomNavbar></CustomNavbar>
+            <CustomNavbar myfunction={toggle}></CustomNavbar>
         <div className="container1">
-           <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar1">
-               <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo1">Logo</h1>
-                   <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars1">
-                       <FaBars onClick={toggle}/>
-                   </div>
-               </div>
+           <div style={{width: isOpen ? "270px" : "55px"}} className="sidebar1">
+               <div className="top_section"></div>
                {
                    menuItem.map((item, index)=>(
                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
@@ -48,6 +60,12 @@ const Sidebar = ({children}) => {
                        </NavLink>
                    ))
                }
+                <img 
+                style={imageStyle}
+                id="btnimage2" 
+                src={isOpen ? beforearbisoft : afterarbisoft} 
+                alt="" 
+            />
            </div>
            <main>{children}</main>
         </div>
