@@ -50,7 +50,7 @@ const Sidebar = ({children}) => {
         <div>
             <CustomNavbar myfunction={toggle}></CustomNavbar>
         <div className="container1">
-           <div style={{width: isOpen ? "270px" : "55px"}} className="sidebar1">
+           <div style={{width: isOpen ? "270px" : "57px"}} className="sidebar1">
                <div className="top_section"></div>
                {
                    menuItem.map((item, index)=>(
@@ -67,7 +67,7 @@ const Sidebar = ({children}) => {
                 alt="" 
             />
            </div>
-           <main>{children}</main>
+           <main style={{padding:0}}>{children}</main>
         </div>
         </div>
     );

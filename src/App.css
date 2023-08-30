@@ -70,3 +70,40 @@ main{
   position: absolute;
   bottom: 0;
 }
+.dashboard
+{
+  display: flex;
+  justify-content: space-evenly;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  border: 1px solid fuchsia;
+  background-color:rgba(195, 222, 240, 0.205);
+}
+.remaindercard
+{
+  width: 30%;
+  margin-top:9%;
+}
+.line {
+  border: 0; 
+  border-top: 1px solid grey; 
+  margin: 10px 0; 
+}
+.remaindericon
+{
+  display: inline;
+  margin-right: 10px;
+}
+.moodstats
+{ 
+  border:1px solid darkgoldenrod;
+  width: 30%;
+  margin-top:9%;
+}
+.announcements
+{
+  border: 1px solid gray;
+  width: 30%;
+  margin-top:9%;
+}
