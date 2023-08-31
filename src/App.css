@@ -1,18 +1,21 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   text-decoration: none;
 }
-.container1{
 
-  display:flex;
+.container1 {
+
+  display: flex;
   border: 2px solid purple;
 }
-main{
+
+main {
   width: 100%;
   padding: 20px;
 }
-.sidebar1{
+
+.sidebar1 {
   background: #083671;
   color: #fff;
   height: 100vh;
@@ -20,41 +23,50 @@ main{
   transition: all 0.5s;
   border: 2px solid yellow;
 }
-.top_section{
+
+.top_section {
   display: flex;
-  align-items:center;
-  padding:20px 15px;
+  align-items: center;
+  padding: 20px 15px;
   border: 2px solid green;
 }
-.logo1{
+
+.logo1 {
   font-size: 30px;
 }
-.bars1{
+
+.bars1 {
   display: flex;
   font-size: 25px;
   margin-left: 50px;
 }
-.link{
+
+.link {
   display: flex;
   color: #fff;
   padding: 10px 15px;
   gap: 15px;
   transition: all 0.5s;
 }
-.link:hover{
-  background:lightskyblue;
+
+.link:hover {
+  background: lightskyblue;
   color: #000;
   transition: all 0.5s;
 }
-.active{
+
+.active {
   background: lightskyblue;
   color: #000;
 }
-.icon, .link_text{
+
+.icon,
+.link_text {
   display: inline-block;
   font-size: 15px;
   color: #fff;
 }
+
 .link {
   text-decoration: none;
 }
@@ -62,7 +74,7 @@ main{
 .sidebar1 {
   display: flex;
   flex-direction: column;
-  height: 93vh; 
+  height: 93vh;
 }
 
 
@@ -70,40 +82,73 @@ main{
   position: absolute;
   bottom: 0;
 }
-.dashboard
-{
+
+.dashboard {
   display: flex;
   justify-content: space-evenly;
   height: 100%;
   width: 100%;
   margin: 0;
   border: 1px solid fuchsia;
-  background-color:rgba(195, 222, 240, 0.205);
+  background-color: rgba(195, 222, 240, 0.205);
 }
-.remaindercard
-{
+
+.remaindercard {
   width: 30%;
-  margin-top:9%;
+  margin-top: 9%;
 }
+
 .line {
-  border: 0; 
-  border-top: 1px solid grey; 
-  margin: 10px 0; 
+  border: 0;
+  border-top: 1px solid grey;
+  margin: 10px 0;
 }
-.remaindericon
-{
+
+.remaindericon {
   display: inline;
   margin-right: 10px;
 }
-.moodstats
-{ 
-  border:1px solid darkgoldenrod;
+
+.moodstats {
+  border: 1px solid darkgoldenrod;
   width: 30%;
-  margin-top:9%;
+  margin-top: 9%;
 }
-.announcements
-{
+
+.announcements {
   border: 1px solid gray;
   width: 30%;
-  margin-top:9%;
+  margin-top: 9%;
+}
+
+.organogram {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(195, 222, 240, 0.205);
+  padding: 30px;
+}
+
+.organogram h1 {
+  font-weight: 400;
+  color: rgb(81, 81, 81);
+}
+
+.centered-card-container {
+  width: 90%;
+  margin-left: 5%;
+  border: 1px solid chocolate;
+}
+
+#dropdown-basic-organo {
+  text-align: left;
+
+  background-color: white;
+  color: #000;
+  border:0px;
+  border-radius: 0;
+  border-bottom: 2px solid  #083671;
+
+}
+#dropdown-basic-organo::after {
+  content: none;
 }
