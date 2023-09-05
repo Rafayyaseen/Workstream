@@ -134,8 +134,9 @@ main {
 }
 
 .centered-card-container {
-  width: 90%;
-  margin-left: 5%;
+  height: 80%;
+  width: 95%;
+  margin-left: 2%;
   border: 1px solid chocolate;
 }
 
@@ -151,4 +152,7 @@ main {
 }
 #dropdown-basic-organo::after {
   content: none;
+}
+.spaced-table th, .spaced-table td {
+  padding: 10px 20px;
 }

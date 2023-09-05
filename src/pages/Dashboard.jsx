@@ -6,6 +6,7 @@ import { BsEmojiAngry, BsEmojiFrown, BsEmojiNeutral, BsEmojiSmile, BsEmojiLaughi
 import Button from 'react-bootstrap/Button';
 import { GiSuitcase } from "react-icons/gi";
 import{ AiOutlineTeam } from "react-icons/ai";
+
 const Dashboard = () => {
     const customButtonStyle = {
         position: 'absolute',
@@ -15,6 +16,7 @@ const Dashboard = () => {
         padding: '5px 8px',
         marginLeft: '7px',
     };
+
     return (
         <div className="dashboard">
             <div className="remaindercard">
@@ -113,7 +115,7 @@ const Dashboard = () => {
                     <Card.Body>
                         <blockquote className="blockquote mb-0" >
                             <p style={{ fontSize: '11px' }}>
-                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', marginTop: '10px', display: 'inline-block' }}><FaBirthdayCake style={{ fontSize: '20px' }} /></div>Danish Sattar & 2 more have birthdays today <Button variant="outline-danger" style={customButtonStyle}>Wish Them</Button>{' '}
+                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', marginTop: '10px', display: 'inline-block' }}><FaBirthdayCake style={{ fontSize: '20px' }} /></div>Danish Sattar & 2 more have birthdays today <Button variant="outline-danger" style={customButtonStyle}>Wish Him</Button>{' '}
                             </p>
                             <hr class="line" />
                             <p style={{ fontSize: '11px' }}>
@@ -145,12 +147,6 @@ const Dashboard = () => {
                                 Ladies and gentlemen! Arbitainment is thrilled to present "Jashn-e-Azadi", a patriotic extravaganza, on the 10th of August! Join us for a day filled with love and pride for Pakistan<cite title="Source Title"></cite>
                             </footer>
                             <hr class="line" />
-                            <p style={{ fontSize: '18px', fontWeight: '600' }}>
-                            Open Layout Conduct Policy{' '}
-                            </p>
-                            <footer className="blockquote-footer" style={{ fontSize: '12px' }}>
-                            Hi All, I hope this email finds you well. We have created an Open Layout Conduct Policy to ensure efficient use of our work space and to create a comfortable environment for everyone.<cite title="Source Title"></cite>
-                            </footer>
                         </blockquote>
                     </Card.Body>
                 </Card>

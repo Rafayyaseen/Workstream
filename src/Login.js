@@ -2,16 +2,28 @@ import googleicon1 from "./images/google-icon.png"
 import './login.css';
 import workstreamLogo from "./images/workstream-logo.png"
 import arbisoftlogo from "./images/arbisoft-logo.png"
-
+import axios from 'axios';
 import React, { useState } from 'react';
+import {  useNavigate } from 'react-router-dom';
 
 const Login = () => {
-  const [username, setUsername] = useState('');
+  const navigate = useNavigate();
+  const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
-  
-  const handleLogin = (e) => {
+  const [error, setError] = useState('');
+  const handleLogin = async(e) => {
     e.preventDefault();
-    console.log('Logged in with:', username, password);
+    console.log('Logged in with:', email, password);
+    try {
+      const response = await axios.post('http://localhost:8000/user/api/authenticate_user/', {
+        email,
+        password,
+      });
+      navigate('/');
+    } catch (err) {
+      setError('Invalid Email or Password.');
+      alert(error);
+    }
 
   };
 
@@ -28,8 +40,8 @@ const Login = () => {
         type="text"
         id="name"
         placeholder="Email"
-        defaultValue={username}
-        onChange={(e) => setUsername(e.target.value)}
+        defaultValue={email}
+        onChange={(e) => setemail(e.target.value)}
       />
        <input
         type="password"

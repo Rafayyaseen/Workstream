@@ -5,12 +5,14 @@ import Dashboard from './pages/Dashboard';
 import Organogram from './pages/Organogram';
 import Projectlogs from './pages/Porjectlogs';
 import Sidebar from './sidebar';
+import Signup from './signup';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup/>}/>
         <Route 
           path="/*" 
           element={
