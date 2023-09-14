@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios'; 
 import workstreamLogo from "./images/workstream-logo.png"
 import './signup.css';
+import { useNavigate } from 'react-router-dom';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -9,6 +10,7 @@ const Signup = () => {
     email: '',
     password: '',
   });
+  const navigate=useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -25,15 +27,21 @@ const Signup = () => {
     };
 
     try {
-      const response = await axios.post('http://localhost:8000/user/api/create_user/', userData);
-      alert("Account Successfully Created");
-      setFormData({ name: '', email: '', password: '' });
-    } catch (error) {
-      alert('Signup error:');
-    }
-  };
+        const response = await axios.post('http://localhost:8000/user/api/create_user/', userData);
+        alert("Account Successfully Created");
+        setFormData({ name: '', email: '', password: '' });
+        navigate('/login');
+      } catch (error) {
+        if (error.response && error.response.status === 400) {
+          alert('User already exists.');
+        } else {
+          alert('Signup error: Something went wrong.');
+        }
+      }
+    }   
 
   return (
+    <div className="signupbody" style={{border:'1px solid',height:'100vh'}}>
     <div className="signup">
          <img src={workstreamLogo} alt="" />
       <h4>Sign Up</h4>
@@ -73,6 +81,7 @@ const Signup = () => {
         </div>
         <button id="signupbtn" type="submit">Sign Up</button>
       </form>
+    </div>
     </div>
   );
 };

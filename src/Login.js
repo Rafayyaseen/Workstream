@@ -3,7 +3,7 @@ import './login.css';
 import workstreamLogo from "./images/workstream-logo.png"
 import arbisoftlogo from "./images/arbisoft-logo.png"
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {  useNavigate } from 'react-router-dom';
 
 const Login = () => {
@@ -11,6 +11,8 @@ const Login = () => {
   const [email, setemail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+
+
   const handleLogin = async(e) => {
     e.preventDefault();
     console.log('Logged in with:', email, password);
@@ -19,7 +21,12 @@ const Login = () => {
         email,
         password,
       });
-      navigate('/');
+      if (response.data.message === 'Authentication successful') {
+        console.log(response.data.user_id);
+        navigate(`/sidebar/${response.data.user_id}`);
+      } else {
+        setError('Authentication failed. Invalid Email or Password.');
+      }
     } catch (err) {
       setError('Invalid Email or Password.');
       alert(error);

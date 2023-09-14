@@ -1,25 +1,31 @@
-
+.signupbody
+{
+    background-image: url('./images/arbisoftsignup.jpeg'); 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    
+}
 .signup {
-    max-width: 400px;
+    max-width: 380px;
     margin: 0 auto;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;
+    background-color:whitesmoke;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-top:100px;
   }
   .signup img{
-    margin-top: 15px;
-    height: 115px;
-    width: 195px;
+    margin-top: 6px;
+    height: 100px;
+    width: 170px;
     margin-left: 24%;
   }
   .signup h4 {
     color: #0056b3;
-    margin-top: 10px;
+    margin-top: 7px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
   }
   
   .form-group {

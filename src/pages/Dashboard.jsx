@@ -1,4 +1,3 @@
-import React from "react";
 import Card from 'react-bootstrap/Card';
 import { TbActivityHeartbeat, TbSpeakerphone } from "react-icons/tb";
 import { FaCalendarAlt, FaBirthdayCake, FaHandshake } from 'react-icons/fa';
@@ -6,23 +5,46 @@ import { BsEmojiAngry, BsEmojiFrown, BsEmojiNeutral, BsEmojiSmile, BsEmojiLaughi
 import Button from 'react-bootstrap/Button';
 import { GiSuitcase } from "react-icons/gi";
 import{ AiOutlineTeam } from "react-icons/ai";
+import { useParams } from 'react-router-dom';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
 
 const Dashboard = () => {
+    const [userName, setUserName] = useState('');
     const customButtonStyle = {
-        position: 'absolute',
-        right: '18px',
+        position: 'absolute ',
         display: 'inline-block',
         fontSize: '12px',
         padding: '5px 8px',
-        marginLeft: '7px',
+        marginLeft:'6px',
     };
+    const { user_id } = useParams();
+    useEffect(() => {
+       
+        const fetchUsername = async () => {
+            try {
+              const userId = user_id; 
+              const response = await axios.post('http://localhost:8000/user/api/getusername/', { userId });
+              const username = response.data.name;
+              setUserName(username);
+              console.log(`Fetched username: ${username}`);
+            } catch (error) {
+              console.error('An error occurred while fetching data:', error);
+            }
+          };
+      
+          fetchUsername();
 
+      }, [user_id]);
     return (
         <div className="dashboard">
             <div className="remaindercard">
+            <h2 style={{marginTop:'25px',marginBottom:'58px',color:'#464C53',display:'inline-block',fontWeight:'650',marginRight:'6px'}}>Hi, </h2>
+            <h2 style={{color:'#464C53',display:'inline-block',fontWeight:'400'}}>{userName}!</h2>
+            
                 <Card>
                     <Card.Header style={{ backgroundColor: 'rgba(225, 232, 242, 0.8)', color: '#083671', width: '90%', marginLeft: '5%', borderRadius: '8px' }}><div class="remaindericon"><FaCalendarAlt /></div>My Reminders</Card.Header>
-                    <Card.Body>
+                    <Card.Body> 
                         <blockquote className="blockquote mb-0" style={{ borderLeft: '5px solid #1084F1', borderRadius: '3.5px', padding: '5px' }}>
                             <p style={{ fontSize: '16px' }}>
                                 Complete your profile{' '}
@@ -115,15 +137,15 @@ const Dashboard = () => {
                     <Card.Body>
                         <blockquote className="blockquote mb-0" >
                             <p style={{ fontSize: '11px' }}>
-                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', marginTop: '10px', display: 'inline-block' }}><FaBirthdayCake style={{ fontSize: '20px' }} /></div>Danish Sattar & 2 more have birthdays today <Button variant="outline-danger" style={customButtonStyle}>Wish Him</Button>{' '}
+                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', marginTop: '10px', display: 'inline-block' }}><FaBirthdayCake style={{ fontSize: '20px' }} /></div><p style={{display:'inline-block'}}>Danish Sattar & 2 more have birthdays today </p><Button variant="outline-danger" style={customButtonStyle}>Wish Him</Button>{' '}
                             </p>
                             <hr class="line" />
                             <p style={{ fontSize: '11px' }}>
-                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', display: 'inline-block' }}><GiSuitcase style={{ fontSize: '20px' }} /></div>Daniyal Farman has work anniversary today<Button variant="outline-warning" style={customButtonStyle}>Wish Them</Button>{' '}
+                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', display: 'inline-block' }}><GiSuitcase style={{ fontSize: '20px' }} /></div> <p style={{display:'inline-block'}}>Daniyal Farman has work anniversary today</p><Button variant="outline-warning" style={customButtonStyle}>Wish Them</Button>{' '}
                             </p>
                             <hr class="line" />
                             <p style={{ fontSize: '11px' }}>
-                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', display: 'inline-block' }}><FaHandshake style={{ fontSize: '20px' }} /></div>Habib Ur Rehman & 3 more joined us recently<Button variant="outline-info" style={customButtonStyle}>Greet Them</Button>{' '}
+                                {' '} <div className="moodicon" style={{ marginLeft: '1%', marginRight: '12px', display: 'inline-block' }}><FaHandshake style={{ fontSize: '20px' }} /></div><p style={{display:'inline-block'}}>Habib Ur Rehman & 3 more joined us recently </p><Button variant="outline-info" style={customButtonStyle}>Greet Them</Button>{' '}
                             </p>
                             <hr class="line" />
                             <p style={{ fontSize: '18px', fontWeight: '600' }}>

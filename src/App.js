@@ -6,26 +6,30 @@ import Organogram from './pages/Organogram';
 import Projectlogs from './pages/Porjectlogs';
 import Sidebar from './sidebar';
 import Signup from './signup';
+import DynamicInputComponent from './test';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path='/test' element={<DynamicInputComponent/>}/>
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup/>}/>
-        <Route 
-          path="/*" 
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/sidebar/:user_id" element={<Sidebar/>}/>
+        <Route
+          path="/*"
           element={
             <Sidebar>
               <Routes>
                 <Route path="/" element={<Dashboard />} />
+                <Route path="/:user_id" element={<Dashboard />} />
                 <Route path="/organogram" element={<Organogram />} />
-                <Route path="/projectlogs" element={<Projectlogs />} />
+                <Route path="/projectlogs/:user_id" element={<Projectlogs />} />
               </Routes>
             </Sidebar>
-          } 
+          }
         />
-        <Route path="*" element={<div><h1>This page does not exist</h1></div>}/>
+        <Route path="*" element={<div><h1>This page does not exist</h1></div>} />
       </Routes>
     </BrowserRouter>
   );
