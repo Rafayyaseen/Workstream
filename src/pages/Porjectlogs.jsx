@@ -106,6 +106,7 @@ const Projectlogs = () => {
     };
 
     const handleSubmit = () => {
+        alert("Data Saved");
         console.log(data, user_id);
         sendDataToServer();
 

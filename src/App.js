@@ -6,13 +6,12 @@ import Organogram from './pages/Organogram';
 import Projectlogs from './pages/Porjectlogs';
 import Sidebar from './sidebar';
 import Signup from './signup';
-import DynamicInputComponent from './test';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/test' element={<DynamicInputComponent/>}/>
+
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/sidebar/:user_id" element={<Sidebar/>}/>
